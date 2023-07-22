@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Choose Your College</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Choose Your College</h1>
+  <p>Select your college from the list:</p>
+  <select id="collegeList">
+    <option value="">Select a college</option>
+    <option value="college1">College 1</option>
+    <option value="college2">College 2</option>
+    <option value="college3">College 3</option>
+    <!-- Add more colleges here -->
+  </select>
+  <button onclick="submitCollege()">Submit</button>
+
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #336699;
+}
+
+select, button {
+  margin: 10px;
+}
+
+#result {
+  margin: 20px;
+  color: #007bff;
+  font-weight: bold;
+}
+function submitCollege() {
+  const collegeList = document.getElementById("collegeList");
+  const selectedCollege = collegeList.value;
+
+  if (selectedCollege) {
+    const resultElement = document.getElementById("result");
+    resultElement.textContent = `You have chosen ${selectedCollege}.`;
+  } else {
+    alert("Please select a college.");
+  }
+}
